@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~bootstrap/scss/bootstrap';
+@import "~primeng/resources/primeng.css";
+@import "~primeng/resources/themes/mdc-light-indigo/theme.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+.alinear-texto-centro {
+  text-align: center;
+}
+
+.btn {
+  border-radius: 6px;
+
+}
+
+.btn-info {
+  background-color: #30699e;
+  border: #000000;
+}
+
+.titulo {
+  color: #145b89;
+  font-size: 40px;
+}
+
+.espacio-top-1 {
+  margin-top: 10px;
+}
+
+.espacio-top-2 {
+  margin-top: 20px;
+}
+
+.espacio-top-3 {
+  margin-top: 30px;
+}
+
+.espacio-top-4 {
+  margin-top: 40px;
+}
+
+#cabecera {
+  text-align: center;
+  color: #101010;
+  font-weight: bold;
+  background: #eeeeee;
+}

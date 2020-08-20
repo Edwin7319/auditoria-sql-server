@@ -1,0 +1,36 @@
+<p-table
+  [value]="data"
+  [columns]="columnas"
+  [responsive]="true"
+  [rows]="100"
+  styleClass="p-datatable-gridlines"
+>
+  <ng-template pTemplate="caption">
+    {{tituloTabla}}
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th id="cabecera" *ngFor="let col of columns">
+        {{col.header}}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr>
+      <td *ngFor="let col of columns">
+                <span class="p-column-title">
+                  {{col.header}}
+                </span>
+        {{rowData[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="emptymessage" let-columns>
+    <tr>
+      <td [attr.colspan]="columns.length">
+        No existe registros
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
