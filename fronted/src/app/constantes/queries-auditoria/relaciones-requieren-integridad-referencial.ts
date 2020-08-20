@@ -1,12 +1,12 @@
 export const
-RELACIONES_REQUIRE_INTEGRIDAD_REFERENCIAL = `SELECT  obj.name AS [FK_CONSTRAINT],
-    sch.name AS [ESQUEMA],
-    tab1.name AS [TABLA],
-    col1.name AS [COLUMNA],
-    tab2.name AS [TABLA_REFERENCIADA],
-    col2.name AS [COLUMNA_REFERENCIADA],
-	fk.is_not_trusted [POSIBLE_INCONSISTENCIA],
-	fk.is_disabled [DESHABILITADO]
+RELACIONES_REQUIRE_INTEGRIDAD_REFERENCIAL = `SELECT  obj.name AS [obj_name],
+    sch.name AS [esquema],
+    tab1.name AS [tabla],
+    col1.name AS [columna],
+    tab2.name AS [relacion_tabla],
+    col2.name AS [relacion_columna],
+	fk.is_not_trusted [posible_inconsistencia],
+	fk.is_disabled [fk_deshabilitada]
 FROM sys.foreign_key_columns fkc
 INNER JOIN sys.objects obj ON obj.object_id = fkc.constraint_object_id
 INNER JOIN sys.tables tab1 ON tab1.object_id = fkc.parent_object_id

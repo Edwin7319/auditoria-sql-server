@@ -1,1 +1,41 @@
-<p>barra-lateral works!</p>
+<div class="espacio-top-1">
+  <div class="wrapper">
+    <button nz-button
+            nzType="dashed"
+            (click)="cambiarEstadoOcultar()">
+      <i nz-icon
+         [nzType]="ocultar ? 'menu-unfold' : 'menu-fold'"></i>
+    </button>
+    <ul nz-menu
+        nzMode="inline"
+        nzTheme="light"
+        [nzInlineCollapsed]="ocultar">
+      <li nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          (click)="irARutaHija('relacional')"
+      >
+        <i nz-icon nzType="android"></i>
+        <span>INTEGRIDAD REFERENCIAL</span>
+      </li>
+      <li nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          (click)="irARutaHija('insercion')"
+      >
+        <i nz-icon nzType="android"></i>
+        <span>
+          INTEGRIDAD PARA INSERCION
+        </span>
+      </li>
+      <li nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          (click)="irARutaHija('datos')">
+        <i nz-icon nzType="android"></i>
+        <span>ANOMALIA DE DATOS</span>
+      </li>
+    </ul>
+  </div>
+
+</div>

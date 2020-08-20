@@ -12,27 +12,27 @@ export class AnomaliaRelacionalComponent implements OnInit {
 
   columnas = [
     {
-      field: 'TABLA',
+      field: 'tabla',
       header: 'Nombre de tabla',
     },
     {
-      field: 'COLUMNA',
+      field: 'columna',
       header: 'Columna',
     },
     {
-      field: 'TABLA_REFERENCIADA',
+      field: 'relacion_tabla',
       header: 'Tabla referenciada',
     },
     {
-      field: 'COLUMNA_REFERENCIADA',
+      field: 'relacion_columna',
       header: 'Columna referenciada',
     },
     {
-      field: 'FK_CONSTRAINT',
+      field: 'obj_name',
       header: 'FK constraint',
     },
     {
-      field: 'DESHABILITADO',
+      field: 'fk_deshabilitada',
       header: 'FK deshabilitada',
     },
     // {
@@ -40,7 +40,7 @@ export class AnomaliaRelacionalComponent implements OnInit {
     //   header: 'Esquema',
     // },
     {
-      field: 'POSIBLE_INCONSISTENCIA',
+      field: 'posible_inconsistencia',
       header: 'Posible inconsistencia',
     },
   ];
@@ -48,11 +48,11 @@ export class AnomaliaRelacionalComponent implements OnInit {
 
   columnasTablaSinReferencias = [
     {
-      field: 'TABLE_NAME',
+      field: 'nombre_tabla',
       header: 'Nombre de tabla',
     },
     {
-      field: 'DESCRIPCION',
+      field: 'descripcion',
       header: 'Descripción',
     },
   ]

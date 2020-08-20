@@ -1,16 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {registerLocaleData} from '@angular/common';
 import en from '@angular/common/locales/en';
-import {ServicioPrincipalService} from "./servicios/servicio-principal.service";
+import {ServicioPrincipalService} from './servicios/servicio-principal.service';
+import {BarraLateralModule} from './componentes/barra-lateral/barra-lateral.module';
+import {NzButtonModule, NzIconModule, NzWaveModule} from 'ng-zorro-antd';
 
 registerLocaleData(en);
 
@@ -23,12 +23,16 @@ registerLocaleData(en);
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BarraLateralModule,
+    NzWaveModule,
+    NzButtonModule,
+    NzIconModule,
   ],
   providers: [
-    { provide: NZ_I18N, useValue: en_US },
     ServicioPrincipalService
-    ],
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
