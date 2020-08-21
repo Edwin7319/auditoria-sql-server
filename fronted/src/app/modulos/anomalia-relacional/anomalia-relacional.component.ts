@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ServicioPrincipalService} from "../../servicios/servicio-principal.service";
-import {RELACIONES_REQUIRE_INTEGRIDAD_REFERENCIAL} from "../../constantes/queries-auditoria/relaciones-requieren-integridad-referencial";
-import {TABLA_SIN_RELACIONES_V2} from "../../constantes/queries-auditoria/tabla_suelta_v2";
+import {ServicioPrincipalService} from '../../servicios/servicio-principal.service';
+import {RELACIONES_REQUIRE_INTEGRIDAD_REFERENCIAL} from '../../constantes/queries-auditoria/relaciones-requieren-integridad-referencial';
+import {TABLA_SIN_RELACIONES_V2} from '../../constantes/queries-auditoria/tabla_suelta_v2';
+import {RELACIONES_NECESARIAS_V2} from '../../constantes/queries-auditoria/relaciones-necesarias-v2';
 
 @Component({
   selector: 'app-anomalia-relacional',
@@ -55,7 +56,7 @@ export class AnomaliaRelacionalComponent implements OnInit {
       field: 'descripcion',
       header: 'Descripción',
     },
-  ]
+  ];
 
   datosTablasSinReferencias: any[] = [];
 
@@ -72,7 +73,7 @@ export class AnomaliaRelacionalComponent implements OnInit {
   obtenerAnomaliaDeConstrains() {
     const cuerpo = {
       consulta: RELACIONES_REQUIRE_INTEGRIDAD_REFERENCIAL,
-    }
+    };
     const servicioPrincipal$ = this._servicioPrincipal
       .obtenerRespuestaAuditoria(cuerpo);
 
@@ -93,7 +94,7 @@ export class AnomaliaRelacionalComponent implements OnInit {
   obtenerTablasSinRelaciones() {
     const cuerpo = {
       consulta: TABLA_SIN_RELACIONES_V2,
-    }
+    };
 
     const servicioPrincipal$ = this._servicioPrincipal
       .obtenerRespuestaAuditoria(cuerpo);

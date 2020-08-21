@@ -1,12 +1,12 @@
 export const
-  ANOMALIA_INTEGRIDAD = `SELECT  obj.name AS [FK_CONSTRAINT],
-    sch.name AS [ESQUEMA],
-    tab1.name AS [TABLA],
-    col1.name AS [COLUMNA],
-    tab2.name AS [TABLA_REFERENCIADA],
-    col2.name AS [COLUMNA_REFERENCIADA],
-    fk.delete_referential_action_desc [DELETE],
-	  fk.update_referential_action_desc [UPDATE]
+  ANOMALIAS_INTEGRIDAD = `SELECT  obj.name AS [fk_constraint],
+    sch.name AS [esquema],
+    tab1.name AS [tabla],
+    col1.name AS [columna],
+    tab2.name AS [tabla_referenciada],
+    col2.name AS [columna_referenciada],
+    fk.delete_referential_action_desc [delete],
+	  fk.update_referential_action_desc [update]
 FROM sys.foreign_key_columns fkc
 INNER JOIN sys.objects obj ON obj.object_id = fkc.constraint_object_id
 INNER JOIN sys.tables tab1 ON tab1.object_id = fkc.parent_object_id

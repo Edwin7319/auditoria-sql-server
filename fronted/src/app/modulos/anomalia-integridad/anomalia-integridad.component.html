@@ -1,1 +1,40 @@
-<p>anomalia-integridad works!</p>
+<div class="container-fluid">
+
+  <app-titulo-pantalla
+    [titulo]="'Anomalia de integridad referencial'"
+    [descripcion]="'Anomalia en la integridad referencial'"
+  ></app-titulo-pantalla>
+
+  <div class="row espacio-top-2">
+    <div class="col-lg-12">
+      <div class="col-sm-12">
+        <mat-card>
+          <b>Descripción:</b>
+          Se muestra las relaciones existentes en la base de datos, el nombre de la FK, las tablas con las respectivas
+          columnas pertenecientes a cada FK, además de las columnas con sus respectivas referencias.
+          <br>
+          Cuando exista CONSTRAINTS que se encuentren deshabilitados o datos inconsistentes que no han sido chequeados
+          por
+          dichos CONSTRAINTS, se mostrará el texto <b class="text-danger">SI</b>, caso contrario se mostrará el texto
+          <b class="text-success">NO</b>.
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="row espacio-top-4">
+    <div class="col-lg-12">
+      <div class="col-sm-12">
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Integridad referencial">
+            <app-tabla-generica
+              [tituloTabla]="'Integridad referencial'"
+              [data]="data"
+              [columnas]="columnas"
+            ></app-tabla-generica>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </div>
+  </div>
+</div>

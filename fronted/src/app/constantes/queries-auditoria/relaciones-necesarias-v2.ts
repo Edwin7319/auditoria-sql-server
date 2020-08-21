@@ -1,4 +1,4 @@
-export const RELACIONES_NECESARIAS_2 = `
+export const RELACIONES_NECESARIAS_V2 = `
 select S1.[TABLE_NAME (PK)], S1.[COL_NAME (PK)], S1.[TABLE_NAME], S1.[COL_NAME] from (
 select CAST(OBJECT_ID_PK as varchar(255)) %2B '-' %2B CAST(COLUMN_ID_PK as varchar(255)) %2B'-'%2B CAST(OBJECT_ID as varchar(255)) %2B'-'%2B CAST(COLUMN_ID as varchar(255)) as 'CODE', * from
 (

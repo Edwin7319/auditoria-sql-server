@@ -5,7 +5,7 @@ import {AnomaliaIntegridadComponent} from './anomalia-integridad.component';
 
 const routes: Routes = [
   {
-    path: 'incio',
+    path: 'inicio',
     component: AnomaliaIntegridadComponent
   },
   {

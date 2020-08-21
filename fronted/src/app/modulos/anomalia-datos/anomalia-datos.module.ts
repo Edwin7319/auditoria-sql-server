@@ -5,6 +5,8 @@ import { AnomaliaDatosRoutingModule } from './anomalia-datos-routing.module';
 import { AnomaliaDatosComponent } from './anomalia-datos.component';
 import {TituloPantallaModule} from "../../componentes/titulo-pantalla/titulo-pantalla.module";
 import {TablaGenericaModule} from "../../componentes/tabla-generica/tabla-generica.module";
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {TablaGenericaModule} from "../../componentes/tabla-generica/tabla-generi
     CommonModule,
     AnomaliaDatosRoutingModule,
     TituloPantallaModule,
-    TablaGenericaModule
+    TablaGenericaModule,
+    MatCardModule,
+    MatTabsModule
   ],
   exports: [
     AnomaliaDatosComponent
