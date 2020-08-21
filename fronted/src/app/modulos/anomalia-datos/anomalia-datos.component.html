@@ -20,12 +20,174 @@
     <div class="col-lg-12">
       <div class="col-sm-12">
         <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Triggers información">
+            <p-table
+              [value]="dataTriggerCompleto"
+              [columns]="columnasTriggerCompleto"
+              [responsive]="true"
+              [rows]="100"
+              styleClass="p-datatable-gridlines"
+            >
+              <ng-template pTemplate="caption">
+                INFORMACIÓN TRIGGERS
+              </ng-template>
+              <ng-template pTemplate="header" let-columns>
+                <tr>
+                  <th id="cabecera" *ngFor="let col of columns">
+                    {{col.header}}
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                  <td *ngFor="let col of columns">
+                <span class="p-column-title">
+                  {{col.header}}
+                </span>
+                    <div *ngIf="col.header === 'Nombre de tabla'">
+                      {{rowData[col.field]}}
+                    </div>
+                    <div *ngIf="col.header === 'Nombre del trigger'">
+                      {{rowData[col.field]}}
+                    </div>
+                    <div *ngIf="col.header === 'Es actualizar'">
+                      <p class="text"
+                         [ngClass]="{
+                  'text-success': rowData[col.field],
+                  'text-danger': !rowData[col.field]
+                  }"
+                      >
+                        <b>{{rowData[col.field] ? 'SI ' : 'NO '}}</b>
+                      </p>
+                    </div>
+                    <div *ngIf="col.header === 'Es eliminar'">
+                      <p class="text"
+                         [ngClass]="{
+                  'text-success': rowData[col.field],
+                  'text-danger': !rowData[col.field]
+                  }"
+                      >
+                        <b>{{rowData[col.field] ? 'SI ' : 'NO '}}</b>
+                      </p>
+                    </div>
+                    <div *ngIf="col.header === 'Es insertar'">
+                      <p class="text"
+                         [ngClass]="{
+                  'text-success': rowData[col.field],
+                  'text-danger': !rowData[col.field]
+                  }"
+                      >
+                        <b>{{rowData[col.field] ? 'SI ' : 'NO '}}</b>
+                      </p>
+                    </div>
+                    <div *ngIf="col.header === 'Es after insert'">
+                      <p class="text"
+                         [ngClass]="{
+                  'text-success': rowData[col.field],
+                  'text-danger': !rowData[col.field]
+                  }"
+                      >
+                        <b>{{rowData[col.field] ? 'SI ' : 'NO '}}</b>
+                      </p>
+                    </div>
+                    <div *ngIf="col.header === 'Es instead of'">
+                      <p class="text"
+                         [ngClass]="{
+                  'text-success': rowData[col.field],
+                  'text-danger': !rowData[col.field]
+                  }"
+                      >
+                        <b>{{rowData[col.field] ? 'SI ' : 'NO '}}</b>
+                      </p>
+                    </div>
+                    <div *ngIf="col.header === 'Estado'">
+                      <p class="text"
+                         [ngClass]="{
+                  'text-success': !rowData[col.field],
+                  'text-danger': rowData[col.field]
+                  }"
+                      >
+                        <b>{{rowData[col.field] ? 'DESHABILITADO ' : 'HABILITADO '}}</b>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="emptymessage" let-columns>
+                <tr>
+                  <td [attr.colspan]="columns.length">
+                    No existe registros
+                  </td>
+                </tr>
+              </ng-template>
+
+            </p-table>
+          </mat-tab>
           <mat-tab label="Triggers">
             <app-tabla-generica
             [tituloTabla]="'TRIGGERSS'"
             [data]="data"
             [columnas]="columnas"
             ></app-tabla-generica>
+          </mat-tab>
+          <mat-tab label="Check constains">
+            <p-table
+              [value]="dataCheck"
+              [columns]="columnasCheck"
+              [responsive]="true"
+              [rows]="100"
+              styleClass="p-datatable-gridlines"
+            >
+              <ng-template pTemplate="caption">
+                INFORMACIÓN TRIGGERS
+              </ng-template>
+              <ng-template pTemplate="header" let-columns>
+                <tr>
+                  <th id="cabecera2" *ngFor="let col of columns">
+                    {{col.header}}
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                  <td *ngFor="let col of columns">
+                <span class="p-column-title">
+                  {{col.header}}
+                </span>
+                    <div *ngIf="col.header === 'Nombre tabla'">
+                      {{rowData[col.field]}}
+                    </div>
+                    <div *ngIf="col.header === 'Nombre constraint'">
+                      {{rowData[col.field]}}
+                    </div>
+                    <div *ngIf="col.header === 'Nombre columna'">
+                      {{rowData[col.field]}}
+                    </div>
+                    <div *ngIf="col.header === 'Regla'">
+                      {{rowData[col.field]}}
+                    </div>
+                    <div *ngIf="col.header === 'Estado'">
+                      <p class="text"
+                         [ngClass]="{
+                  'text-success': !rowData[col.field],
+                  'text-danger': rowData[col.field]
+                  }"
+                      >
+                        <b>{{rowData[col.field] ? 'DESHABILITADO ' : 'HABILITADO '}}</b>
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="emptymessage" let-columns>
+                <tr>
+                  <td [attr.colspan]="columns.length">
+                    No existe check constraint
+                  </td>
+                </tr>
+              </ng-template>
+
+            </p-table>
           </mat-tab>
         </mat-tab-group>
       </div>

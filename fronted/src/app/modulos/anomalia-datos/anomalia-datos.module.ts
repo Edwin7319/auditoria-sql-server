@@ -7,20 +7,22 @@ import {TituloPantallaModule} from "../../componentes/titulo-pantalla/titulo-pan
 import {TablaGenericaModule} from "../../componentes/tabla-generica/tabla-generica.module";
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import {TableModule} from 'primeng';
 
 
 @NgModule({
   declarations: [
     AnomaliaDatosComponent
   ],
-  imports: [
-    CommonModule,
-    AnomaliaDatosRoutingModule,
-    TituloPantallaModule,
-    TablaGenericaModule,
-    MatCardModule,
-    MatTabsModule
-  ],
+    imports: [
+        CommonModule,
+        AnomaliaDatosRoutingModule,
+        TituloPantallaModule,
+        TablaGenericaModule,
+        MatCardModule,
+        MatTabsModule,
+        TableModule
+    ],
   exports: [
     AnomaliaDatosComponent
   ]

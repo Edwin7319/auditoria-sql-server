@@ -7,11 +7,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: '192.168.142.134',
+      host: '192.168.142.128',
       port: 1433,
       username: 'sa',
       password: '73!Juandesalinas',
-      database: 'pedidos',
+      database: 'orders',
       entities: [],
       synchronize: true,
       logging: true

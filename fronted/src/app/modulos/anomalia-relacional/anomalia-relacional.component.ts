@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ServicioPrincipalService} from '../../servicios/servicio-principal.service';
 import {RELACIONES_REQUIRE_INTEGRIDAD_REFERENCIAL} from '../../constantes/queries-auditoria/relaciones-requieren-integridad-referencial';
 import {TABLA_SIN_RELACIONES_V2} from '../../constantes/queries-auditoria/tabla_suelta_v2';
-import {RELACIONES_NECESARIAS_V2} from '../../constantes/queries-auditoria/relaciones-necesarias-v2';
 
 @Component({
   selector: 'app-anomalia-relacional',
