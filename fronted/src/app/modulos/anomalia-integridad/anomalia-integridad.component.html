@@ -10,13 +10,21 @@
       <div class="col-sm-12">
         <mat-card>
           <b>Descripción:</b>
-          Se muestra las relaciones existentes en la base de datos, el nombre de la FK, las tablas con las respectivas
-          columnas pertenecientes a cada FK, además de las columnas con sus respectivas referencias.
-          <br>
-          Cuando exista CONSTRAINTS que se encuentren deshabilitados o datos inconsistentes que no han sido chequeados
-          por
-          dichos CONSTRAINTS, se mostrará el texto <b class="text-danger">SI</b>, caso contrario se mostrará el texto
-          <b class="text-success">NO</b>.
+          La tabla muestra si existe alguna acción que se realice cuando se ejecuta un UPDATE o DELETE, las opcionens que se muestan son:
+          <ul>
+            <li>
+              SET NULL: Los datos secundarios se establecen en NULL cuando se eliminan o actualizan los datos princiapales.
+            </li>
+            <li>
+              CASCADE: Los datos secundarios se eliminan o actualizan cuando se eliminan o actualizan los datos principales
+            </li>
+            <li>
+              SET DEFAULT: Los datos secundarios se establecen en sus valores por defecto cuando se eliminan o actualizan los datos principales
+            </li>
+            <li>
+              NO ACTION: No se realiza ninguna acción con los datos secundarios cuando se eliminan o se actualizan los datos principales
+            </li>
+          </ul>
         </mat-card>
       </div>
     </div>

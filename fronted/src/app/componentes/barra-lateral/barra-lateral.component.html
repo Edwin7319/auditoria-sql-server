@@ -11,11 +11,12 @@
         nzTheme="light"
         [nzInlineCollapsed]="ocultar">
       <li nz-menu-item
+
           nz-tooltip
           nzTooltipPlacement="right"
           (click)="irARutaHija('relacional')"
       >
-        <i nz-icon nzType="android"></i>
+        <i nz-icon nzType="partition" nzTheme="outline"></i>
         <span>INTEGRIDAD REFERENCIAL</span>
       </li>
       <li nz-menu-item
@@ -23,7 +24,7 @@
           nzTooltipPlacement="right"
           (click)="irARutaHija('insercion')"
       >
-        <i nz-icon nzType="android"></i>
+        <i nz-icon nzType="insert-row-above" nzTheme="outline"></i>
         <span>
           INTEGRIDAD PARA INSERCION
         </span>
@@ -32,7 +33,7 @@
           nz-tooltip
           nzTooltipPlacement="right"
           (click)="irARutaHija('datos')">
-        <i nz-icon nzType="android"></i>
+        <i nz-icon nzType="line-chart" nzTheme="outline"></i>
         <span>ANOMALIA DE DATOS</span>
       </li>
     </ul>
